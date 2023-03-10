@@ -3,6 +3,7 @@ and os to manipulate path"""
 import sys
 import os
 
+
 def txt_importer(path_file):
     """Validate and read a txt file"""
     _, ext = os.path.splitext(path_file)
@@ -16,4 +17,3 @@ def txt_importer(path_file):
 
     with open(path_file, "r", encoding="utf-8") as file:
         return file.read().split('\n')
-        
