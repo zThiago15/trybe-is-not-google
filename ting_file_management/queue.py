@@ -12,6 +12,8 @@ class Queue(AbstractQueue):
         return self.items.append(value)
 
     def dequeue(self):
+        if len(self.items) == 0:
+            return None
         return self.items.pop(0)
 
     def search(self, index):
