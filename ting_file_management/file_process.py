@@ -4,19 +4,19 @@ from ting_file_management.queue import Queue
 
 def process(path_file: str, instance: Queue):
     """Aqui irá sua implementação"""
-    for index in range(len(instance)):
-        file = instance.search(index)
-        if file["nome_do_arquivo"] == path_file:
-            return False
+    path_file_names = [instance.search(index)['nome_do_arquivo']
+                       for index in range(len(instance))]
 
-    content = txt_importer(path_file)
+    if path_file not in path_file_names:
+        content = txt_importer(path_file)
+        dict_data = {
+            'nome_do_arquivo': path_file,
+            'qtd_linhas': len(content),
+            'linhas_do_arquivo': content,
+        }
 
-    file_info = {
-        "nome_do_arquivo": path_file,
-        "qtd_linhas": len(content),
-        "linhas_do_arquivo": content,
-    }
-    print(file_info)
+        instance.enqueue(dict_data)
+        print(dict_data, file=sys.stdout)    
 
 
 def remove(instance: Queue):
@@ -31,5 +31,11 @@ def remove(instance: Queue):
     return sys.stdout.write(f"Arquivo {path_file} removido com sucesso")
 
 
-def file_metadata(instance, position):
+def file_metadata(instance: Queue, position):
     """Aqui irá sua implementação"""
+    try:
+        dict_search = instance.search(position)
+    except IndexError:
+        print('Posição inválida', file=sys.stderr)
+    else:
+        print(dict_search, file=sys.stdout)
