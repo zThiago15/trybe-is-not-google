@@ -23,12 +23,11 @@ def remove(instance: Queue):
     """Remove first item of queue"""
 
     if len(instance.items) == 0:
-        return sys.stdout.write("Não há elementos\n")
+        return print("Não há elementos", file=sys.stdout)
 
     file_removed = instance.dequeue()
     path_file = file_removed["nome_do_arquivo"]
-
-    return sys.stdout.write(f"Arquivo {path_file} removido com sucesso")
+    print(f"Arquivo {path_file} removido com sucesso")
 
 
 def file_metadata(instance: Queue, position):
