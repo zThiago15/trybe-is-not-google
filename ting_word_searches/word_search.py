@@ -1,5 +1,6 @@
 from ting_file_management.queue import Queue
 
+
 def exists_word(word, instance: Queue):
     word_search = []
     for file_index in range(len(instance)):
@@ -17,6 +18,7 @@ def exists_word(word, instance: Queue):
                 "ocorrencias": lines_search
             })
     return word_search
+
 
 def search_by_word(word, instance):
     """Aqui irá sua implementação"""

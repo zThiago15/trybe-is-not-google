@@ -2,6 +2,7 @@ import sys
 from ting_file_management.file_management import txt_importer
 from ting_file_management.queue import Queue
 
+
 def process(path_file: str, instance: Queue):
     """Aqui irá sua implementação"""
     path_file_names = [instance.search(index)['nome_do_arquivo']
@@ -16,7 +17,7 @@ def process(path_file: str, instance: Queue):
         }
 
         instance.enqueue(dict_data)
-        print(dict_data, file=sys.stdout)    
+        print(dict_data, file=sys.stdout)
 
 
 def remove(instance: Queue):
