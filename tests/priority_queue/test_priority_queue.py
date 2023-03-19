@@ -1,30 +1,45 @@
 from ting_file_management.priority_queue import PriorityQueue
 
-
 def test_basic_priority_queueing():
-    """Aqui irá sua implementação"""
-    pq = PriorityQueue()
-    pq.enqueue({"nome": "arquivo1", "qtd_linhas": 3})
-    assert len(pq.high_priority) == 1
-    assert len(pq.regular_priority) == 0
+    lista_arquvios = [
+        {
+            "nome_do_arquivo": "arquivo1",
+            "rows_qt": 1,
+            "linhas_do_arquivo": 'hahaha'
+        },
+        {
+            "nome_do_arquivo": "arquivo2",
+            "rows_qt": 6,
+            "linhas_do_arquivo": 'hahaha'
+        },
+        {
+            "nome_do_arquivo": "arquivo3",
+            "rows_qt": 3,
+            "linhas_do_arquivo": 'hahaha'
+        },
+        {
+            "nome_do_arquivo": "arquivo4",
+            "rows_qt": 8,
+            "linhas_do_arquivo": 'hahaha'
+        },
+        {
+            "nome_do_arquivo": "arquivo5",
+            "rows_qt": 2,
+            "linhas_do_arquivo": 'hahaha'
+        },
+    ]
+    project_priority = PriorityQueue()
 
-    # Teste de enfileiramento de arquivo com mais de 5 linhas
-    pq.enqueue({"nome": "arquivo2", "qtd_linhas": 7})
-    assert len(pq.high_priority) == 1
-    assert len(pq.regular_priority) == 1
+    for indexar in lista_arquvios:
+        project_priority.enqueue(indexar)
 
-    # Teste de dequeue com arquivo de alta prioridade
-    arquivo_prioritario = pq.dequeue()
-    assert arquivo_prioritario["nome"] == "arquivo1"
-
-    # Teste de dequeue sem arquivo de alta prioridade
-    arquivo_normal = pq.dequeue()
-    assert arquivo_normal["nome"] == "arquivo2"
-
-    # Teste de busca por arquivo em alta prioridade
-    pq.enqueue({"nome": "arquivo3", "qtd_linhas": 2})
-    assert pq.search(0)["nome"] == "arquivo3"
-
-    # Teste de busca por arquivo em fila regular
-    pq.enqueue({"nome": "arquivo4", "qtd_linhas": 8})
-    assert pq.search(1)["nome"] == "arquivo4"
+    assert len(project_priority) == 5
+    assert project_priority.search(0)["rows_qt"] == 1
+    project_priority.dequeue()
+    assert project_priority.search(0)["rows_qt"] == 3
+    project_priority.dequeue()
+    assert project_priority.search(0)["rows_qt"] == 2
+    project_priority.dequeue()
+    assert project_priority.search(0)["rows_qt"] == 6
+    project_priority.dequeue()
+    assert project_priority.search(0)["rows_qt"] == 8
