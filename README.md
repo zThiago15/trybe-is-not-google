@@ -1,12 +1,4 @@
-# :construction: README em construção ! :construction:
-
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/61299540/222642463-47c00a65-4839-45b5-a137-15ce0f62679e.png" alt="Logo" width="300" height="200" />
-</p>
-
-<h1 align="center"> Trybe Is Not Google </h1>
-
-[![-------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
+<h1 align="center"> Trybe Is Not Google 🔍</h1>
 
 <p align="center">
   <a href="#Introdução"> 🧩 Introdução </a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -14,16 +6,12 @@
   <a href="#Creditos"> 🏆 Créditos </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
 
-<br/>
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 
 <a id="Introdução"></a>
 ## 🧩 Introdução 
 
 Este projeto implementa um programa que simule um algoritmo de indexação de documentos similar ao do Google,sendo capaz de identificar ocorrências de termos em arquivos TXT. Para isso, utilizo das estruturas de dados fila, pilha, 
-
-<br/> <br/>
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 
 <br />   
 
@@ -45,7 +33,7 @@ git+https://github.com/betrybe/pytest-dependency
 <br /> 
 
 <a id="Creditos"></a>
-## 🏆 Equipe
+## 🏆 Créditos
 
 <div > 
 
